@@ -10,7 +10,7 @@
 
 config APP_SC
     bool "Simple CAmkES application with SC"
-    default y
+    default n
     select APP_CAMKES_EXECUTIVE
     help
         A simple application to demonstrate CAmkES and SC functionality.
