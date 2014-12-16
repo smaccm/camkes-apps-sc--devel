@@ -18,7 +18,7 @@ assembly {
                 component Echo echo;
                 component Client client;
 
-                connection seL4RPC simple(from client.s, to echo.s);
+                connection seL4RPCSendWait simple(from client.s, to echo.s);
         }
         configuration {
             echo.s_period = 10000;
@@ -27,7 +27,7 @@ assembly {
             client._control_period = 10000;
             client._control_deadline = 10000;
             client._control_exec_req = 10000;
-            // client.s_sc = "none";
+            echo.s_sc = "none";
         }
 }
 
